@@ -33,7 +33,7 @@ Repo for the VEME 2024 NGS Variant Calling Tutorial!
 </figure>
 
 <figure>
-    <img src="variant_calling_steps.png" width="230" height="300">
+    <img src="images/variant_calling_steps.png" width="230" height="300">
     <figcaption>Variant Calling Workflow</figcaption>
 </figure>
 	
