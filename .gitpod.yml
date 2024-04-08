@@ -1,0 +1,5 @@
+image: continuumio/miniconda3
+
+# Commands that will run on workspace start
+tasks:
+    - command: conda create -f environment.yml
