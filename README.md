@@ -23,19 +23,15 @@ Repo for the VEME 2024 NGS Variant Calling Tutorial!
 3. Determine variants from the alignments
 4. Filter the resulting variants for the desired characteristics
 
+<figure>
+    <img src="images/variant_calling_steps.png" width="230" height="300">
+    <figcaption>Variant Calling Workflow</figcaption>
+</figure>
+
 #### In the variant calling process you will run into terminologies that are not always used consistently
 #### We will attempt to define a few of these terms while making a note that these definitions are not “textbook” definitions designed to accurately capture the proper terminology
 ### 2. Assessing Read Quality
 
-<figure>
-    <img src="images/variant_calling_steps.png" width="230" height="300">
-    <figcaption>Variant Calling Workflow</figcaption>
-</figure>
-
-<figure>
-    <img src="images/variant_calling_steps.png" width="230" height="300">
-    <figcaption>Variant Calling Workflow</figcaption>
-</figure>
 	
 1. Downloading SRA files:  
     * Make a directory to download fastq files:  
