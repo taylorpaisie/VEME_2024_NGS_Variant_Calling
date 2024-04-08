@@ -8,6 +8,16 @@ Repo for the VEME 2024 NGS Variant Calling Tutorial!
 ### CDC - Bacterial Special Pathogens Branch (BSPB)
 ### Email:  ltj8@cdc.gov
 
+### Tutorial link:  
+### `https://taylorpaisie.github.io/VEME_2024_NGS_Variant_Calling/`
+
+
+#### Directory visualization
+<figure>
+    <img src="images/variant_calling_directories.svg" width="400">
+    <figcaption>Structure of the directories for the variant calling tutorial</figcaption>
+</figure>
+
 #### Command line cheat sheet
 <figure>
     <img src="images/command-line-cheat-sheet-large.png" height="800">
@@ -325,17 +335,17 @@ $ for infile in *_1.fastq.gz
     * You will see the header (which describes the format), the time and date the file was created, the version of bcftools that was used, the command line parameters used, and some additional information  
     * The first few columns represent the information we have about a predicted variation:  
 <figure>
-    <img src="vcf_format1.png" width="700">
+    <img src="images/vcf_format1.png" width="700">
 </figure>
 
    * The last two columns contain the genotypes and can be tricky to decode:  
 <figure>
-    <img src="vcf_format2.png" width="700">
+    <img src="images/vcf_format2.png" width="700">
 </figure>
 
    * For our file, the metrics presented are GT:PL:GQ:  
 <figure>
-    <img src="vcf_format3.png" width="700">
+    <img src="images/vcf_format3.png" width="700">
 </figure>
 
 
@@ -377,7 +387,7 @@ $ for infile in *_1.fastq.gz
     4. Do the same with our VCF file (SRR1972917_final_variants.vcf)  
 
     <figure>
-    <img src="igv_picture.png" width="700">
+    <img src="images/igv_picture.png" width="700">
     </figure>
 
 
