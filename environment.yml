@@ -1,4 +1,4 @@
-name: nextstrain
+name: variant_calling
 channels:
   - conda-forge
   - bioconda
