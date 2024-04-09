@@ -270,7 +270,7 @@ $ for infile in *_1.fastq.gz
 
     `$ mkdir -p ~/variant_calling/data/ref_genome`  
     <!-- fix this with the correct link -->
-    `$ wget -nv https://raw.githubusercontent.com/taylorpaisie/VEME_2024_NGS_Variant_Calling/main/KJ660346.2.fasta -O KJ660346.2.fasta` 
+    `$ wget -nv https://raw.githubusercontent.com/taylorpaisie/VEME_2024_NGS_Variant_Calling/main/KJ660346.2.fasta -O KJ660346.2.fasta`  
     `$ cd ~/variant_calling/data/ref_genome`  
 
 3. Create directories for the results that will be generated as part of this workflow    
