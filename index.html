@@ -1,39 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VEME 2024 NGS Variant Calling</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --primary-color: #4CAF50;
+            --text-color: #333;
+            --bg-color: #f4f4f4;
+        }
         body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            line-height: 1.6;
-            color: #333;
-            background-color: #f4f4f4;
+            font-family: 'Nunito', sans-serif;
+            color: var(--text-color);
+            background-color: var(--bg-color);
         }
-        .container {
-            max-width: 1100px;
-            margin: auto;
-            padding: 20px;
-        }
-        header {
-            background: #333;
+        /* Add your existing styles here */
+        nav#navbar {
+            background: var(--primary-color);
             color: #fff;
-            padding-top: 30px;
-            min-height: 70px;
-            border-bottom: #0779e4 3px solid;
+            padding: 10px 0;
         }
-        header h1 {
-            margin: 0;
-            padding-bottom: 10px;
+        nav#navbar ul {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
         }
-        section {
-            padding: 20px;
-            background: #fff;
+        nav#navbar ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            display: block;
+        }
+        nav#navbar ul li a:hover,
+        nav#navbar ul li a:focus {
+            background: darken(var(--primary-color), 10%);
         }
     </style>
+
 </head>
 <body>
     <header>
@@ -41,16 +44,46 @@
             <h1>VEME 2024 NGS Variant Calling</h1>
         </div>
     </header>
-    <section class="container">
+    <nav id="navbar">
+        <div class="container">
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#resources">Resources</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+    <!-- Existing header and section elements -->
+    <section id="about" class="container">
         <h2>About the Project</h2>
         <p>
             VEME 2024 NGS Variant Calling is an educational project aimed at researchers, students, or professionals in genomics or bioinformatics. It focuses on providing comprehensive resources and training on Next-Generation Sequencing (NGS) and variant calling techniques. The project is designed to enhance understanding and skills in genomic data analysis.
         </p>
-        <h2>Resources</h2>
-        <p>Here you can add links to your resources, documentation, tutorials, etc.</p>
-        <h2>Contact Information</h2>
-        <p>Provide your contact information or ways to contribute to the project here.</p>
     </section>
+    <section id="resources" class="container">
+        <section class="container">
+
+            <h2>Resources</h2>
+            <p>Here you can add links to your resources, documentation, tutorials, etc.</p>
+        </section>
+    </section>
+    <section id="contact" class="container">
+        <h2>Contact Information</h2>
+            <p>Provide your contact information or ways to contribute to the project here.</p>
+    </section>
+
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+        
+
 </body>
 </html>
 
