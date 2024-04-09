@@ -4,6 +4,10 @@ channels:
   - bioconda
   - defaults
 dependencies:
+  - numpy
+  - pandas
+  - scipy
+  - matplotlib
   - fastqc
   - trimmomatic
   - bwa

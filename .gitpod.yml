@@ -1,5 +1,14 @@
-image: continuumio/miniconda3
+image:
+  file: .gitpod.Dockerfile
 
-# Commands that will run on workspace start
 tasks:
-    - command: conda create -f environment.yml
+  - name: Setup Conda Environment
+    init: >
+      echo "Creating Conda Environment..." &&
+      conda env create -f environment.yml &&
+      echo "Activating Conda Environment..." &&
+      echo "conda activate variant_calling" >> ~/.bashrc
+
+ports:
+  - port: 8888
+    onOpen: open-preview
