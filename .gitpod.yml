@@ -16,7 +16,7 @@ tasks:
         conda config --set auto_activate_base false;
         echo "Creating Conda Environment...";
         conda env create -f environment.yml || conda env update -f environment.yml;
-    command: echo "Activating Conda Environment..." && conda activate myenv
+    command: echo "Activating Conda Environment..." && conda activate variant_calling
 
 
 ports:
