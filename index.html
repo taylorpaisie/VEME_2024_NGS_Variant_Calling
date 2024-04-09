@@ -1,89 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <title>VEME 2024 NGS Variant Calling Tutorial</title>
+    <link rel="icon" type="image/svg" href="/docs/images/dna-icon.svg">
     <style>
-        :root {
-            --primary-color: #4CAF50;
-            --text-color: #333;
-            --bg-color: #f4f4f4;
-        }
         body {
-            font-family: 'Nunito', sans-serif;
-            color: var(--text-color);
-            background-color: var(--bg-color);
+            background-color: white;
+            color: black;
         }
-        /* Add your existing styles here */
-        nav#navbar {
-            background: var(--primary-color);
-            color: #fff;
-            padding: 10px 0;
+        a, a:visited {
+            color: black;
         }
-        nav#navbar ul {
-            list-style-type: none;
-            padding: 0;
-            display: flex;
-            justify-content: center;
+        nav, nav .nav-wrapper {
+            background-color: #34a8eb; /* Darker shade for nav bar */
         }
-        nav#navbar ul li a {
-            color: white;
-            text-decoration: none;
-            padding: 10px 20px;
-            display: block;
-        }
-        nav#navbar ul li a:hover,
-        nav#navbar ul li a:focus {
-            background: darken(var(--primary-color), 10%);
+        .nav-wrapper a.brand-logo, .nav-wrapper ul li a {
+            color: white; /* Ensuring nav text is white */
         }
     </style>
-
 </head>
 <body>
-    <header>
-        <div class="container">
-            <h1>VEME 2024 NGS Variant Calling</h1>
-        </div>
-    </header>
-    <nav id="navbar">
-        <div class="container">
-            <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#resources">Resources</a></li>
+    <nav class="green">
+        <div class="nav-wrapper container">
+            <a href="#" class="brand-logo">Variant Calling Tutorial</a>
+            <ul class="right hide-on-med-and-down">
+                <li><a href="https://github.com/taylorpaisie/VEME_2024_NGS_Variant_Calling">GitHub Repository</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </div>
-    </nav>
-    <!-- Existing header and section elements -->
-    <section id="about" class="container">
-        <h2>About the Project</h2>
-        <p>
-            VEME 2024 NGS Variant Calling is an educational project aimed at researchers, students, or professionals in genomics or bioinformatics. It focuses on providing comprehensive resources and training on Next-Generation Sequencing (NGS) and variant calling techniques. The project is designed to enhance understanding and skills in genomic data analysis.
-        </p>
-    </section>
-    <section id="resources" class="container">
-        <section class="container">
+    </nav>     
+    
+    <main class="container">
+        <div class="grid">
+            <section>
+                <h1><b>Welcome to the VEME 2024 Next Generation Sequencing Module Variant Calling Tutorial</b></h1>
+                </ul>
 
-            <h2>Resources</h2>
-            <p>Here you can add links to your resources, documentation, tutorials, etc.</p>
-        </section>
-    </section>
-    <section id="contact" class="container">
-        <h2>Contact Information</h2>
-            <p>Provide your contact information or ways to contribute to the project here.</p>
-    </section>
+                <h3>Assembly Workflow</h3>
+                <p>This workflow assembles bacterial isolate genomes from paired-end Illumina FastQ files. Post-assembly contig correction is performed, and a variety of quality assessment processes are recorded throughout the workflow.</p>
+                <img src="docs/images/wf-paired-end-illumina-assembly_logo_light.png" width="900" height="50"><br>
+                <img src="docs/images/updated_wf_asm_image.png" width="1400" height="500"><br>
+                <u><a href="https://bacterial-genomics.github.io/wf-paired-end-illumina-assembly/">Assembly Workflow Documentation</a></u><br>
+                <u><a href="https://bacterial-genomics.github.io/wf-paired-end-illumina-assembly/docs/output.html">Assembly Workflow Output Documentation</a></u>
 
+                <h3>Assembly-based SNP Workflow</h3>
+                <p>General workflow for genome assembly-based SNP phylogeny with optional recombination masking.</p>
+                <img src="wf-assembly-snps/docs/images/wf-assembly-snps_logo_light.png" width="500" height="50"><br>
+                <img src="docs/images/wf-assembly-snps_workflow.png" width="700" height="500"><br>
+                <u><a href="https://github.com/bacterial-genomics/wf-assembly-snps/blob/main/README.md">Assembly SNP Workflow Documentation</a></u><br>
+                <u><a href="https://github.com/bacterial-genomics/wf-assembly-snps/blob/main/docs/output.md">Assembly SNP Workflow Output Documentation</a></u><br>
+
+                <h4 id="contact">Contact & Collaboration</h4>
+                <ul>
+                    <li><u><a href="https://github.com/taylorpaisie/wf-paired-end-illumina-assembly/blob/main/.github/CONTRIBUTING.md">Contributing Guidelines</a></u></li>
+                    <li><u><a href="https://github.com/bacterial-genomics/wf-paired-end-illumina-assembly/blob/dev/ADD_MODULE_GUIDE.md">How to Add a Module</a></u></li>
+                </ul>    
+                <p>If you're interested in contributing to the project or have any inquiries, please reach out to us:</p>
+            </section>
+        </div>
+    </main>
+    <section aria-label="Subscribe example">
+        <div class="container">
+            <article>
+                <hgroup>
+                    <h4>Stay Updated</h4>
+                    <h4>Subscribe for updates</h4>
+                </hgroup>
+                <!-- Updated form action to point to subscribe.php and method to POST -->
+                <form class="grid" action="subscribe.php" method="post">
+                    <input type="text" id="firstname" name="firstname" placeholder="Your Name" aria-label="Your Name" required />
+                    <input type="email" id="email" name="email" placeholder="Your Email" aria-label="Your Email" required />
+                    <button type="submit">Subscribe</button>
+                </form>
+            </article>
+        </div>
+    </section>
+    <footer class="container">
+        <small>
+            <a href="https://github.com/bacterial-genomics">GitHub</a> • <a href="#">Privacy Policy</a>
+        </small>
+    </footer>
+
+    <!-- Materialize JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script>
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-    </script>
-        
-
+      document.addEventListener('DOMContentLoaded', function() {
+        var elems = document.querySelectorAll('.sidenav');
+        var instances = M.Sidenav.init(elems, {});
+      });
+    </script>    
 </body>
 </html>
-
