@@ -269,9 +269,9 @@ $ for infile in *_1.fastq.gz
    * Navigate to NCBI and search for GenBank accession `KJ660346.2` and download fasta file  
 
     `$ mkdir -p ~/variant_calling/data/ref_genome`  
-    <!-- fix this with the correct link -->
-    `$ wget -nv https://raw.githubusercontent.com/taylorpaisie/VEME_2024_NGS_Variant_Calling/main/KJ660346.2.fasta -O KJ660346.2.fasta`  
     `$ cd ~/variant_calling/data/ref_genome`  
+    `$ wget -nv https://raw.githubusercontent.com/taylorpaisie/VEME_2024_NGS_Variant_Calling/main/KJ660346.2.fasta -O KJ660346.2.fasta`  
+    
 
 3. Create directories for the results that will be generated as part of this workflow    
     * We can do this in a single line of code, because mkdir can accept multiple new directory names as input  
