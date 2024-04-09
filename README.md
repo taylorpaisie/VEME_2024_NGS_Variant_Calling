@@ -194,11 +194,11 @@ $ trimmomatic`
     `$ cd ~/variant_calling/data/untrimmed_fastq` 
 
     * Copy Illumina adapters from Trimmomatic into working directory:  
-    `$ cp /usr/local/share/Trimmomatic-main/adapters/NexteraPE-PE.fa .`  
+    `$ cp /home/gitpod/miniconda/envs/variant_calling/share/trimmomatic-0.39-2/adapters/NexteraPE-PE.fa .`  
 
     * Run Trimmomatic:  
 
-    `$ java -jar /usr/local/share/Trimmomatic-main/dist/jar/trimmomatic-0.40-rc1.jar PE SRR1972917_1.fastq.gz SRR1972917_2.fastq.gz SRR1972917_1.trim.fastq.gz SRR1972917_1un.trim.fastq.gz SRR1972917_2.trim.fastq.gz SRR1972917_2un.trim.fastq.gz SLIDINGWINDOW:4:20 MINLEN:25 ILLUMINACLIP:NexteraPE-PE.fa:2:40:15`  
+    `$ trimmomatic PE SRR1972917_1.fastq.gz SRR1972917_2.fastq.gz SRR1972917_1.trim.fastq.gz SRR1972917_1un.trim.fastq.gz SRR1972917_2.trim.fastq.gz SRR1972917_2un.trim.fastq.gz SLIDINGWINDOW:4:20 MINLEN:25 ILLUMINACLIP:NexteraPE-PE.fa:2:40:15`  
     
     * Output:  
 
