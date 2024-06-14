@@ -3,29 +3,22 @@ image:
 
 tasks:
   - name: Setup and Activate Conda Environment
-    init: |
-      if [ ! -d $HOME/miniconda ]; then
-          echo "Installing Miniconda...";
-          wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh;
-          bash miniconda.sh -b -p $HOME/miniconda;
-          rm miniconda.sh;
-          echo "Miniconda installed.";
-      fi;
-      echo "PATH=$HOME/miniconda/bin:$PATH" >> $HOME/.bashrc;
-      source $HOME/.bashrc;
-      conda config --set auto_activate_base false;
-      echo "Creating Conda Environment...";
-      conda env create -f environment.yml || conda env update -f environment.yml;
-    command: |
-      echo "Activating Conda Environment..." && conda activate variant_calling
-      echo "Starting HTML Server..." && npx live-server --port=8000 --open=public/index.html
+    init: >
+        if [ ! -d $HOME/miniconda ]; then
+            echo "Installing Miniconda...";
+            wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh;
+            bash miniconda.sh -b -p $HOME/miniconda;
+            rm miniconda.sh;
+            echo "Miniconda installed.";
+        fi;
+        echo "PATH=$HOME/miniconda/bin:$PATH" >> $HOME/.bashrc;
+        source $HOME/.bashrc;
+        conda config --set auto_activate_base false;
+        echo "Creating Conda Environment...";
+        conda env create -f environment.yml || conda env update -f environment.yml;
+    command: echo "Activating Conda Environment..." && conda activate variant_calling
+
 
 ports:
   - port: 8888
     onOpen: open-preview
-  - port: 8000
-    onOpen: open-preview
-
-vscode:
-  extensions:
-    - ms-vscode.live-server
