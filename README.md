@@ -445,6 +445,10 @@ $ for infile in *_1.fastq.gz
 `$ cd scripts/`  
 `$ touch run_variant_calling.sh`  
 
+Instead of using the `touch` command you can use `code` to open in VS code:  
+
+`$ code run_variant_calling.sh`
+
 
 
 #### Our variant calling workflow has the following steps:  
