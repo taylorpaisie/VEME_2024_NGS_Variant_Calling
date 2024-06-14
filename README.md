@@ -330,7 +330,10 @@ $ for infile in *_1.fastq.gz
     `$ vcfutils.pl varFilter results/vcf/SRR1972917_variants.vcf  > results/vcf/SRR1972917_final_variants.vcf`  
 
 4. Explore the VCF format:  
-    `$ less -S results/vcf/SRR1972917_final_variants.vcf`  
+    `$ less -S results/vcf/SRR1972917_final_variants.vcf` 
+
+    Or you can use the `code` command to open the vcf file with VS code:  
+    `code results/vcf/SRR1972917_final_variants.vcf`   
 
     * You will see the header (which describes the format), the time and date the file was created, the version of bcftools that was used, the command line parameters used, and some additional information  
     * The first few columns represent the information we have about a predicted variation:  
