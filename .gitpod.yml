@@ -17,9 +17,6 @@ tasks:
         echo "Creating Conda Environment...";
         conda env create -f environment.yml || conda env update -f environment.yml;
     command: echo "Activating Conda Environment..." && conda activate variant_calling
-    
-  - name: Start web server
-    init: python -m http.server 8000
 
 
 ports:
