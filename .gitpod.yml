@@ -18,10 +18,8 @@ tasks:
         conda env create -f environment.yml || conda env update -f environment.yml;
     command: echo "Activating Conda Environment..." && conda activate variant_calling
 
-  - init: npm install -g http-server
-    command: http-server -p 8080
 
 
 ports:
-  - port: 8080
+  - port: 8888
     onOpen: open-preview
