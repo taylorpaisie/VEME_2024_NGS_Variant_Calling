@@ -18,8 +18,7 @@ tasks:
         conda env create -f environment.yml || conda env update -f environment.yml;
     command: echo "Activating Conda Environment..." && conda activate variant_calling
 
-  - command: |
-      simplehttpserver --port 8000
+
 
 ports:
   - port: 8888
