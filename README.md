@@ -3,7 +3,7 @@
 [![Open with Gitpod](https://img.shields.io/badge/Open%20with-Gitpod-908a85?logo=gitpod)](https://gitpod.io/#https://github.com/taylorpaisie/VEME_2024_NGS_Variant_Calling)
 
 <figure>
-    <img src="images/dogpool1.jpg" width="200">
+    <img src="images/dogpool1.jpg" width="400" height="350">
     <figcaption>Structure of the directories for the variant calling tutorial</figcaption>
 </figure>
 
