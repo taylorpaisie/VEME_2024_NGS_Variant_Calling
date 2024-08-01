@@ -237,8 +237,6 @@ $ for infile in *_1.fastq.gz
         ${base}_2.trim.fastq.gz ${base}_2un.trim.fastq.gz \
         SLIDINGWINDOW:4:20 MINLEN:25 ILLUMINACLIP:NexteraPE-PE.fa:2:40:15
     done
-
-
 ```
 
 
@@ -492,7 +490,7 @@ for fq1 in ~/variant_calling/data/trimmed_fastq/*_1.trim.fastq.gz
     bam=~/variant_calling/results/bam/${base}.aligned.bam
     sorted_bam=~/variant_calling/results/bam/${base}.aligned.sorted.bam
     raw_bcf=~/variant_calling/results/bcf/${base}_raw.bcf
-    variants=~/variant_calling/results/bcf/${base}_variants.vcf
+    variants=~/variant_calling/results/vcf/${base}_variants.vcf
     final_variants=~/variant_calling/results/vcf/${base}_final_variants.vcf 
 
     bwa mem $genome $fq1 $fq2 > $sam
