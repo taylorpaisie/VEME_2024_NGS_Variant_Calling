@@ -4,7 +4,6 @@
 
 <figure>
     <img src="images/dogpool1.jpg" width="400" height="250">
-    <figcaption>Structure of the directories for the variant calling tutorial</figcaption>
 </figure>
 
 ## Taylor K. Paisie
