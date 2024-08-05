@@ -199,7 +199,7 @@ Another way to visualize data quality is to generate histograms of the average q
     * We visualized per-base quality graphs showing the distribution of read quality at each base across all reads in a sample and extracted information about which samples fail which quality checks  
     * It is very common to have some quality metrics fail, and this may or may not be a problem for your downstream application  
     * For our variant calling workflow, we will be removing some of the low quality sequences to reduce our false positive rate due to sequencing error  
-    * We will use a program called Trimmomatic to filter poor quality reads and trim poor quality bases from our samples  
+    * We will use a program called [Trimmomatic](https://github.com/timflutre/trimmomatic) to filter poor quality reads and trim poor quality bases from our samples  
 
 ```
 $ trimmomatic  
@@ -304,7 +304,7 @@ $ for infile in *_1.fastq.gz
 1. Aligning to a reference genome
     * We perform read alignment or mapping to determine where in the genome our reads originated from  
     * There are a number of tools to choose from and, while there is no gold standard, there are some tools that are better suited for particular NGS analyses  
-    * We will be using the Burrows Wheeler Aligner (BWA), which is a software package for mapping low-divergent sequences against a large reference genome  
+    * We will be using the [Burrows Wheeler Aligner (BWA)](https://github.com/lh3/bwa), which is a software package for mapping low-divergent sequences against a large reference genome  
     * The alignment process consists of two steps:  
         * Indexing the reference genome  
         * Aligning the reads to the reference genome  
@@ -344,6 +344,7 @@ $ for infile in *_1.fastq.gz
     * Each line that follows corresponds to alignment information for a single read  
     * Each alignment line has 11 mandatory fields for essential mapping information and a variable number of other fields for aligner specific information  
     * An example entry from a SAM file is displayed below with the different fields highlighted  
+    * We will use the program [samtools](https://www.htslib.org/) for these steps
   
 6. Convert SAM file to BAM format  
     `$ samtools view -S -b results/sam/SRR1972917.aligned.sam > results/bam/SRR1972917.aligned.bam`  
@@ -361,7 +362,7 @@ $ for infile in *_1.fastq.gz
 #### A variant call is a conclusion that there is a nucleotide difference vs. some reference at a given position in an individual genome or transcriptome, often referred to as a Single Nucleotide Variant (SNV)  
 #### The call is usually accompanied by an estimate of variant frequency and some measure of confidence  
 #### Similar to other steps in this workflow, there are a number of tools available for variant calling  
-#### We will be using bcftools, but there are a few things we need to do before actually calling the variants  
+#### We will be using [bcftools](https://samtools.github.io/bcftools/bcftools.html), but there are a few things we need to do before actually calling the variants  
 
 1. Calculate the read coverage of positions in the genome  
    `$ bcftools mpileup -O b -o results/bcf/SRR1972917_raw.bcf -f data/ref_genome/KJ660346.2.fasta results/bam/SRR1972917.aligned.sorted.bam `  
@@ -405,7 +406,7 @@ $ for infile in *_1.fastq.gz
 #### Visualization will allow you to get a “feel” for the data, as well as detecting abnormalities and problems  
 #### Also, exploring the data in such a way may give you ideas for further analyses  
 #### As such, visualization tools are useful for exploratory analysis  
-#### We will describe two different tools for visualization: a light-weight command-line based one and the Broad Institute’s Integrative Genomics Viewer (IGV) which requires software installation and transfer of files
+#### We will describe two different tools for visualization: a light-weight command-line based one and the Broad Institute’s [Integrative Genomics Viewer (IGV)](https://igv.org/doc/desktop/#) which requires software installation and transfer of files
 
 1. In order for us to visualize the alignment files, we will need to index the BAM file using samtools:  
     `$ samtools index results/bam/SRR1972917.aligned.sorted.bam`  
