@@ -13,5 +13,5 @@ dependencies:
   - bwa
   - samtools
   - bcftools
-
-
+  - miniwdl
+  - docker-py
