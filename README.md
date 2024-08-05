@@ -356,6 +356,7 @@ $ for infile in *_1.fastq.gz
     `$ samtools flagstat results/bam/SRR1972917.aligned.sorted.bam`  
 
 Now lets view the header of our BAM file:  
+
 `$ samtools view -H results/bam/SRR1972917.aligned.sorted.bam`
 
 ```
@@ -370,14 +371,8 @@ Now lets view the header of our BAM file:
     
 Now lets view a small part of our BAM file:  
 
-`$ samtools view results/bam/SRR1972917.aligned.sorted.bam | head -1`
+`$ samtools view results/bam/SRR1972917.aligned.sorted.bam | head -1` 
 
-
-```
-SRR1972917.550638	99	KJ660346.2	52	60	101M	=	289	268	CTATGAGGAAGATTAATAATTTTCCTCTCATTGAAATTTATATCGGAATTTAAATTGAAATTGTTACTGTAATCATACCTGGTTTGTTTCAGAGCCATATC	@;@DDFFFFHGHGJJJIIGIGGEHFGGAGHJIIGGHGIJGE@GGEEGIJJGA<BF?FFD<FHEABGHIG>CFH@GIGGGHHHCCHB@CECBCDEC25>CC5	NM:i:0	MD:Z:101	MC:Z:31M	MQ:i:49	AS:i:101	XS:i:0
-```
-
-Here we can see the sample 
 
 
 
