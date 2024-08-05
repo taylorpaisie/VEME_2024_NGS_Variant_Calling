@@ -381,6 +381,39 @@ Now lets view a small part of our BAM file:
 `$ samtools view results/bam/SRR1972917.aligned.sorted.bam | head -1` 
 
 
+Mapping Quality (MAPQ) and Compact Idiosyncratic Gapped Alignment Representation (CIGAR):
+
+`samtools view results/bam/SRR1972917.aligned.sorted.bam | cut -f 5,6 | grep -v "101" | head -5`
+
+```
+60	32M
+60	33M
+49	31M
+60	2S98M
+60	3S98M
+```
+
+The values in the MAPQ (Mapping Quality) column here are all 60. This column was designed to indicate the likelihood of the alignment being placed incorrectly. It is the same Phred score that we encountered in the FASTQ files. And we read it the same way, 60/10 = 6 so the chance of seeing this alignment being wrong is 10^-6 or 1/1,000,000 one in a million.
+
+The numbers that an aligner puts into the MAPQ field are typically estimates. It is not possible to mathematically compute this value. What this field does is to inform us on a guess by the aligner’s algorithm. This guess is more of a hunch that should not be treated as a continuous, numerical value. Instead, it should be thought of as an ordered label, like “not so good” or “pretty good”. Aligner developers even generate unique MAPQ qualities to mark individual cases. For example, bwa will create a MAPQ=0 if a read maps equally well to more than one location.
+
+The CIGAR string is a different beast altogether. It is meant to represent the alignment via numbers followed by letters:
+
+- `M` match of mismatch
+- `I` insertion
+- `D` deletion
+- `S` soft clip
+- `H` hard clip
+- `N` skipping
+
+These are also meant to be “readable”; the 2S98M says that 2 bases are soft clipped and the next 98 are a match or mismatch.
+
+The CIGAR representation is a neat concept, alas it was developed for short and well-matching reads. As soon as the reads show substantial differences the CIGAR representations are much more difficult to read.
+
+There are also different variants of CIGAR. The “default” CIGAR encoding describes both the match and mismatch in the same way, with an M. There are some unfortunate rationales and explanations for having adopted this choice - one that complicates analysis even more.
+
+The extended CIGAR encoding adopted by others uses the symbols of = and X to indicate matches and mismatches.
+
 
 
 ### 5. Variant Calling
