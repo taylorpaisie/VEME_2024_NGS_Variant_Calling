@@ -697,3 +697,9 @@ for fq1 in ~/variant_calling/data/trimmed_fastq/*_1.trim.fastq.gz
 #### Now your automated variant calling script should be running!!!
 #### Tip:  using echo statements within your scripts is a great way to get an automated progress update
 
+## Try running similar pipelines using miniwdl
+
+A similar process for reference-based genome assembly and variant calling can be run
+on the command line using [miniwdl](https://miniwdl.readthedocs.io/) to execute WDL pipelines available from [broadinstitute/viral-pipelines](https://github.com/broadinstitute/viral-pipelines):
+
+### [Tutorial for reference-based assembly using miniwdl](./miniwdl_ref-based_assembly.md)
