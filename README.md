@@ -355,6 +355,30 @@ $ for infile in *_1.fastq.gz
     * Lets take a look at the statistics in our BAM file:  
     `$ samtools flagstat results/bam/SRR1972917.aligned.sorted.bam`  
 
+Now lets view the header of our BAM file:  
+`$ samtools view -H results/bam/SRR1972917.aligned.sorted.bam`
+
+```
+@HD	VN:1.5	SO:coordinate
+@SQ	SN:KJ660346.2	LN:18959
+@PG	ID:bwa	PN:bwa	VN:0.7.18-r1243-dirty	CL:bwa mem /Users/tpaisie/variant_calling/data/ref_genome/KJ660346.2.fasta /Users/tpaisie/variant_calling/data/trimmed_fastq/SRR1972917_1.trim.fastq.gz /Users/tpaisie/variant_calling/data/trimmed_fastq/SRR1972917_2.trim.fastq.gz
+@PG	ID:samtools	PN:samtools	PP:bwa	VN:1.20	CL:samtools view -S -b /Users/tpaisie/variant_calling/results/sam/SRR1972917.aligned.sam
+@PG	ID:samtools.1	PN:samtools	PP:samtools	VN:1.20	CL:samtools sort -o /Users/tpaisie/variant_calling/results/bam/SRR1972917.aligned.sorted.bam /Users/tpaisie/variant_calling/results/bam/SRR1972917.aligned.bam
+@PG	ID:samtools.2	PN:samtools	PP:samtools.1	VN:1.20	CL:samtools view -H results/bam/SRR1972917.aligned.sorted.bam
+```
+
+    
+Now lets view a small part of our BAM file:  
+
+`$ samtools view results/bam/SRR1972917.aligned.sorted.bam | head -1`
+
+
+```
+SRR1972917.550638	99	KJ660346.2	52	60	101M	=	289	268	CTATGAGGAAGATTAATAATTTTCCTCTCATTGAAATTTATATCGGAATTTAAATTGAAATTGTTACTGTAATCATACCTGGTTTGTTTCAGAGCCATATC	@;@DDFFFFHGHGJJJIIGIGGEHFGGAGHJIIGGHGIJGE@GGEEGIJJGA<BF?FFD<FHEABGHIG>CFH@GIGGGHHHCCHB@CECBCDEC25>CC5	NM:i:0	MD:Z:101	MC:Z:31M	MQ:i:49	AS:i:101	XS:i:0
+```
+
+Here we can see the sample 
+
 
 
 ### 5. Variant Calling
