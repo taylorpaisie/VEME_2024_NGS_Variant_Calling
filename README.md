@@ -383,7 +383,7 @@ Now lets view a small part of our BAM file:
 
 Mapping Quality (MAPQ) and Compact Idiosyncratic Gapped Alignment Representation (CIGAR):
 
-`samtools view results/bam/SRR1972917.aligned.sorted.bam | cut -f 5,6 | grep -v "101" | head -5`
+`$ samtools view results/bam/SRR1972917.aligned.sorted.bam | cut -f 5,6 | grep -v "101" | head -5`
 
 ```
 60	32M
