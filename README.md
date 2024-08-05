@@ -142,10 +142,24 @@ application/gzip
 `$ mv ~/variant_calling/data/untrimmed_fastq/*.html ~/variant_calling/results/fastqc_untrimmed_reads`  
 `$ cd ~/variant_calling/results/fastqc_untrimmed_reads`  
 
-   * We can now open the .html file to view the FastQC results:  
+   * We can now open the .html file to view the FastQC results: 
+
+
 
 <figure>
-    <img src="images/untrimmed_fastqc_picture.png" width="500" height="300">
+    <img src="images/fastqc-stoplight.png" width="450" height="400">
+    <figcaption>FastQC Spotlight Visualization</figcaption>
+</figure>
+
+#### Should I be worried about the “stoplight” symbols?
+
+Usually not.
+
+When FastQC runs, it generates “stoplight” icons for each analysis having “pass,” “warning,” and “error” symbols. Most of the time, these symbols are not meaningful. They were developed for only a particular class of samples and library preparation methods and just for certain types of instruments.
+
+
+<figure>
+    <img src="images/untrimmed_fastqc_picture.png" width="450" height="300">
     <figcaption>FastQC output of SRR1972917_1.fastq.gz</figcaption>
 </figure>
 
