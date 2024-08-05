@@ -177,6 +177,21 @@ The vertical axis is the FASTQ scores that represent error probabilities:
 
 The three-colored bands illustrate the typical labels that we assign to these measures: reliable (30-40, green), less reliable (20-30, yellow) and error-prone (1-20, red). The yellow boxes contain 50% of the data, the whiskers indicate the 75% outliers.
 
+
+<figure>
+    <img src="images/fastqc_seq_length_histo.png" width="450" height="300">
+    <figcaption>Sequence lengths histogram of SRR1972917_1.fastq.gz</figcaption>
+</figure>
+
+The sequence length distribution shows how many sequences of each length the data contains. For fixed read length instruments, like the Illumina sequencer, all read lengths are the same. For long read technologies like the PacBio and MinION, the distribution can be a lot more varied.
+
+<figure>
+    <img src="images/fastqc-quality-distribution.png" width="450" height="300">
+    <figcaption>Sequence quality histogram of SRR1972917_1.fastq.gz</figcaption>
+</figure>
+
+Another way to visualize data quality is to generate histograms of the average qualities. The horizontal scales are the quality scores; the vertical axis indicates the number of reads of that quality.
+
 ### 3. Trimming and Filtering
 
 1. Trimming the bad quality reads from our fastq files
