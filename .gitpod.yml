@@ -19,7 +19,6 @@ tasks:
         conda config --add channels bioconda;
         conda config --add channels conda-forge;
         conda config --set channel_priority strict;
-        conda install -n base conda-libmamba-solver && conda config --set solver libmamba;
         echo "Creating Conda Environment...";
         conda env create -f environment.yml || conda env update -f environment.yml;
         hash -r;
