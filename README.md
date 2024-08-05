@@ -405,7 +405,7 @@ Now lets view a small part of our BAM file:
     `$ less -S results/vcf/SRR1972917_final_variants.vcf` 
 
     Or you can use the `code` command to open the vcf file with VS code:  
-    `code results/vcf/SRR1972917_final_variants.vcf`   
+    `$ code results/vcf/SRR1972917_final_variants.vcf`   
 
     * You will see the header (which describes the format), the time and date the file was created, the version of bcftools that was used, the command line parameters used, and some additional information  
     * The first few columns represent the information we have about a predicted variation:  
