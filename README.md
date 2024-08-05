@@ -63,8 +63,13 @@
 	* In order to view our the fastq file, we must decompress it:  
 		`$ gunzip SRR1972917_1.fastq.gz`
 	* We can view the first complete read in one of the files our dataset by using head to look at the first four lines:  
-		`$ head -n 4 SRR1972917_1.fastq`  
-    * Output:  
+		`$ head -n 4 SRR1972917_1.fastq`   
+    
+        * A FASTA-like header, but instead of the > symbol it uses the @ symbol. This is followed by an ID and more optional text, similar to the FASTA headers  
+        * The second section contains the measured sequence (typically on a single line), but it may be wrapped until the + sign starts the next section  
+        * The third section is marked by the + sign and may be optionally followed by the same sequence id and header as the first section
+        * The last line encodes the quality values for the sequence in section 2 and must be of the same length as section 2. It should also be wrapped the same way as the section 2
+
   
 ```
 @SRR1972917.1 1/1
@@ -72,6 +77,8 @@ TCCGTGGGGCTGGTACGACAGTATCGATGAGGGTGGACGCTTCAAGGTCAAGCGTATACAGGTCAACCCCAAAGCTAGCC
 +  
 @CCFDDFFHGHHHGIJJIIJJJJGJJJJGIJIJJFIJJJIIJJJJHHFHHFFFFAADEFEDDDDDDDDDDDD??CCCDDDDDDCCCDDCCCDD:?CABDDB
 ``` 
+
+
 
    * Each quality score represents the probability that the corresponding nucleotide call is incorrect  
    * This quality score is logarithmically based, so a quality score of 10 reflects a base call accuracy of 90%, but a quality score of 20 reflects a base call accuracy of 99%
