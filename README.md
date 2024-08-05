@@ -142,7 +142,7 @@ application/gzip
 `$ mv ~/variant_calling/data/untrimmed_fastq/*.html ~/variant_calling/results/fastqc_untrimmed_reads`  
 `$ cd ~/variant_calling/results/fastqc_untrimmed_reads`  
 
-   * We can now open the .html file to view the FastQC results: 
+### We can now open the .html file to view the FastQC results: 
 
 
 
