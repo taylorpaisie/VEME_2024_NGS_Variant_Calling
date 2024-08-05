@@ -157,11 +157,25 @@ Usually not.
 
 When FastQC runs, it generates “stoplight” icons for each analysis having “pass,” “warning,” and “error” symbols. Most of the time, these symbols are not meaningful. They were developed for only a particular class of samples and library preparation methods and just for certain types of instruments.
 
+Although if most or all your stop-light icons are red, then you probably have a data problem.
+
 
 <figure>
     <img src="images/untrimmed_fastqc_picture.png" width="450" height="300">
     <figcaption>FastQC output of SRR1972917_1.fastq.gz</figcaption>
 </figure>
+
+#### What does the sequence quality visualization tell us?
+The simplest way to snapshot the quality of a sequencing run is via a chart that plots the error likelihood at each position averaged over all measurements.
+
+The vertical axis is the FASTQ scores that represent error probabilities:
+
+* 10 corresponds to 10% error (1/10)
+* 20 corresponds to 1% error (1/100)
+* 30 corresponds to 0.1% error (1/1,000)
+* 40 corresponds to one error every 10,000 measurements (1/10,000) that is an error rate of 0.01%
+
+The three-colored bands illustrate the typical labels that we assign to these measures: reliable (30-40, green), less reliable (20-30, yellow) and error-prone (1-20, red). The yellow boxes contain 50% of the data, the whiskers indicate the 75% outliers.
 
 ### 3. Trimming and Filtering
 
