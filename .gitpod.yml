@@ -14,11 +14,16 @@ tasks:
         echo "PATH=$HOME/miniconda/bin:$PATH" >> $HOME/.bashrc;
         source $HOME/.bashrc;
         conda config --set auto_activate_base false;
+        conda config --set auto_activate_base false;
+        conda config --set always_yes yes;
+        conda config --add channels defaults;
+        conda config --add channels bioconda;
+        conda config --add channels conda-forge;
+        conda config --set channel_priority strict;
         echo "Creating Conda Environment...";
         conda env create -f environment.yml || conda env update -f environment.yml;
+        hash -r;
     command: echo "Activating Conda Environment..." && conda activate variant_calling
-
-
 
 ports:
   - port: 8888

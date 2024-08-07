@@ -9,4 +9,3 @@ RUN wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh &
 
 # Initialize Conda
 RUN $HOME/miniconda/bin/conda init bash
-
